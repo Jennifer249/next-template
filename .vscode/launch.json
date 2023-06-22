@@ -1,0 +1,34 @@
+// 单击 VS Code 左侧的小 “错误和播放图标” 或按 Ctrl + Shift + D 访问调试菜单。你可以选择要运行的脚本并使用启动/停止按钮启动 / 停止它
+// 第一项配置是 Next.js: debug server-side，使用的调试器类型为 node-terminal。在启动该调试配置时，将会运行 npm run dev 命令来启动 Next.js 的开发服务器，并在调试器中进行调试。可在 vscode 设置红点调试
+// 第二项配置是 Next.js: debug client-side，使用的调试器类型为 pwa-chrome，将请求发送到 http://localhost:3000。这个配置用于在浏览器上调试客户端代码。当调试 pwa 时。
+// 第三项配置是 Next.js: debug full stack，同样使用的是 node-terminal 调试器类型，并在调试器中进行调试。不同之处在于，在启动该调试配置时，将会运行 npm run dev 命令启动 Next.js 的开发服务器，并等待它在终端输出 started server on ... 时，自动打开 Chrome 调试器以进行服务器端和客户端代码调试。可在 vscode 设置红点调试
+
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "name": "Next.js: debug server-side",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "autoAttachChildProcesses": true
+    },
+    {
+      "name": "Next.js: debug client-side",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "<http://localhost:3003>"
+    },
+    {
+      "name": "Next.js: debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      }
+    }
+  ]
+}
