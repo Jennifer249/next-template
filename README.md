@@ -14,3 +14,12 @@ yarn dev
 
 # 查看文档
 yarn storybook
+
+# Products Built with This Template
+
+[Grok Imagine 2](https://grokimagine2.org/)
+[Seedance 3.0 AI](https://seedance3ai.video/)
+[Veo 4 AI](https://tryveo4.app/)
+[Kling 3 AI](https://kling3.app/)
+[Seedance 2.0 AI](https://seedance-2.app/)
+[Z Image Turbo](https://zimageturbo.art/)
